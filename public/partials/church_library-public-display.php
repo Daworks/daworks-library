@@ -90,7 +90,7 @@
 								<label><input type="checkbox" name="search_type[]" value="publisher" <?php isInKey( $_REQUEST[ 'search_type' ], 'publisher' ) ?>> 출판사</label>
 								<label><input type="checkbox" name="search_type[]" value="published_year" <?php isInKey($_REQUEST['search_type'], 'published_year') ?>> 발행년도</label>
 								<label><input type="checkbox" name="search_type[]" value="classified_code" <?php isInKey($_REQUEST['search_type'], 'classified_code') ?>> 분류기호</label>
-								<label><input type="checkbox" name="search_type[]" value="book_code" <?php isInKey($_REQUEST['search_type'], 'book_code') ?>> 서적기호</label>
+								<label><input type="checkbox" name="search_type[]" value="book_code" <?php isInKey ( $_REQUEST[ 'search_type' ], 'book_code' ) ?>> 도서기호</label>
 								<label><input type="checkbox" name="search_type[]" value="ISBN" <?php isInKey($_REQUEST['search_type'], 'ISBN') ?>> ISBN</label>
 							</div>
 							<div class="form-group">
@@ -118,7 +118,7 @@
 				<th>출판사</th>
 				<th>발행년도</th>
 				<th>분류기호</th>
-				<th>약호</th>
+				<th widht="80">도서기호</th>
 				<th>ISBN</th>
 			</tr>
 			</thead>
