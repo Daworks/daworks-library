@@ -1,0 +1,23 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+@import "../bootstrap/css/bootstrap.min.css";
+@import "../bootstrap/css/bootstrap-theme.min.css";
+
+.btn-size {
+	min-width:100px;
+}
+.btn-r-margin {
+	margin-right:6px;
+}
+.searchbox label {
+	font-weight:normal;
+	margin-right:6px;
+	position:relative;
+	top:2px;
+}
+.searchbox label input {
+	position:relative;;
+	top:-3px;
+}
