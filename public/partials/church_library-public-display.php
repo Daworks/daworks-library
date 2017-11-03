@@ -81,7 +81,7 @@
 						<span class="label label-success">TOTAL</span> <b><?php echo number_format( $total ); ?></b> 권
 					</div>
 					<div class="col-sm-10">
-						<form action="" class="form-inline">
+						<form class="form-inline" id="search">
 							<input type="hidden" name="page" value="church-library">
 							<div class="form-group searchbox">
 								<label for="search" class="sr-only">검색</label>
@@ -95,7 +95,7 @@
 							</div>
 							<div class="form-group">
 								<div class="input-group input-group-sm">
-									<input type="text" name="keyword" class="form-control input-sm" placeholder="검색어..." value="<?php echo (null != $_REQUEST['keyword']) ? $_REQUEST['keyword'] : '' ?>">
+									<input type="text" name="keyword" id="keyword" class="form-control input-sm" placeholder="검색어..." value="<?php echo (null != $_REQUEST['keyword']) ? $_REQUEST['keyword'] : '' ?>">
 									<span class="input-group-btn">
 										<button class="btn btn-sm btn-info">검색</button>
 									</span>
