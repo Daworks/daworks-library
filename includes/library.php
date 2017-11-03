@@ -151,3 +151,14 @@
 			                   ]);
 		}
 	}
+	
+	function str_limit ( $str, $limit ) {
+		$length       = mb_strlen ( $str );
+		$return_value = $str;
+		
+		if ( $length > $limit ) {
+			$return_value = mb_substr ( $str, 1, $limit ) . '...';
+		}
+		
+		return $return_value;
+	}

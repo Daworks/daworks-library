@@ -26,9 +26,9 @@
 	<?php if ( count($books) > 0 ) : ?>
 		<?php foreach($books as $book) : ?>
 	<tr>
-		<td><?php echo mb_substr($book->title, 1, 20) ?></td>
-		<td><?php echo $book->writer ?></td>
-		<td><?php echo $book->publisher ?></td>
+		<td><?php echo str_limit ( $book -> title, 20 ) ?></td>
+		<td><?php echo str_limit ( $book -> writer, 10 ) ?></td>
+		<td><?php echo str_limit ( $book -> publisher, 10 ) ?></td>
 	</tr>
 			<?php endforeach ?>
 	<?php else : ?>
