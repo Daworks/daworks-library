@@ -109,7 +109,7 @@
 			</div>
 		</div>
 
-		<table class="table table-hover">
+		<table class="table table-hover daworks_church_library_table">
 			<thead>
 			<tr>
 				<th>제목</th>
