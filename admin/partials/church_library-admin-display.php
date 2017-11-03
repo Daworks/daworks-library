@@ -138,7 +138,7 @@
 				<th>출판사</th>
 				<th>발행년도</th>
 				<th>분류기호</th>
-				<th>약호</th>
+				<th width="80">도서기호</th>
 				<th>ISBN</th>
 				<th>업데이트</th>
 			</tr>
