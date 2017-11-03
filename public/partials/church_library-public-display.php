@@ -100,7 +100,7 @@
 										<button class="btn btn-sm btn-info">검색</button>
 									</span>
 								</div>
-								<button type="button" class="btn btn-sm btn-default">다시검색</button>
+								<button type="button" class="btn btn-sm btn-default" onclick="location.href='<?php echo admin_url('admin.php?page=church-library'); ?>'">다시검색</button>
 							</div>
 						</form>
 					</div>
