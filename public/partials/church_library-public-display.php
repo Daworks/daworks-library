@@ -114,7 +114,7 @@
 			<tr>
 				<th>제목</th>
 				<th>저자</th>
-				<th>보유권수</th>
+				<th class="text-center">보유</th>
 				<th>출판사</th>
 				<th>발행년도</th>
 				<th>분류기호</th>
@@ -133,7 +133,7 @@
 										<tr id="book_%s">
 											<td>%s</td>
 											<td>%s</td>
-											<td>%d</td>
+											<td class="text-center">%d</td>
 											<td>%s</td>
 											<td>%s</td>
 											<td>%s</td>
