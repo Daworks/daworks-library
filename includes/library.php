@@ -1,10 +1,4 @@
 <?php
-	/**
-	 * Created by PhpStorm.
-	 * User: dhlee
-	 * Date: 2017. 11. 3.
-	 * Time: AM 12:20
-	 */
 	
 	add_action('admin_bar_menu', 'add_church_library_toolbar_menu', 999);
 	function add_church_library_toolbar_menu()
@@ -48,6 +42,8 @@
 		
 		$table = $wpdb -> prefix . 'book_info';
 		try {
+			date_default_timezone_set ( 'Asia/Seoul' );
+			$now = date ( 'Y-m-d H:i:s' );
 			
 			$wpdb -> insert(
 				$table,
@@ -59,7 +55,8 @@
 					'published_year'  => $published_year,
 					'classified_code' => $classified_code,
 					'book_code'       => $book_code,
-					'isbn'            => $isbn
+					'isbn'            => $isbn,
+					'created_at'      => $now
 				),
 				array ( '%s',
 				        '%s',
@@ -68,13 +65,16 @@
 				        '%s',
 				        '%s',
 				        '%s',
-				        '%s' )
+				        '%s',
+				        '%s'
+				)
 			);
 			
 			
 			if ( !$wpdb->insert_id ) {
 				throw new Exception( '입력 실패' );
 			}
+			wp_die ();
 			$redirect = add_query_arg('msg', '저장 되었습니다.', admin_url('admin.php?page=church-library'));
 			wp_redirect($redirect);
 			
@@ -92,23 +92,25 @@
 			global $wpdb;
 			$id = (null !== $_REQUEST['book_id']) ? intval($_REQUEST['book_id']) : null;
 			$table = $wpdb->prefix . 'book_info';
-			
+			date_default_timezone_set ( 'Asia/Seoul' );
+			$now = date ( 'Y-m-d H:i:s' );
 			
 			$data = [
-				'title' => sanitize_text_field( $_REQUEST['title']),
-				'writer' => sanitize_text_field( $_REQUEST['writer']),
-				'count' => sanitize_text_field( $_REQUEST['count']),
-				'publisher' => sanitize_text_field( $_REQUEST['publisher']),
-				'published_year' => sanitize_text_field( $_REQUEST['published_year']),
+				'title'           => sanitize_text_field( $_REQUEST['title']),
+				'writer'          => sanitize_text_field( $_REQUEST['writer']),
+				'count'           => sanitize_text_field( $_REQUEST['count']),
+				'publisher'       => sanitize_text_field( $_REQUEST['publisher']),
+				'published_year'  => sanitize_text_field( $_REQUEST['published_year']),
 				'classified_code' => sanitize_text_field( $_REQUEST['classified_code']),
-				'book_code' => sanitize_text_field( $_REQUEST['book_code']),
-				'isbn' => sanitize_text_field( $_REQUEST['isbn'])
+				'book_code'       => sanitize_text_field( $_REQUEST['book_code']),
+				'isbn'            => sanitize_text_field ( $_REQUEST[ 'isbn' ] ),
+				'created_at'      => $now
 			];
 			
 			$result = $wpdb->update( $table, $data, array('id'=>$id));
 			
 			if ( false === $result ) throw new Exception('업데이트 실패');
-			$wpdb->flush ();
+			wp_die ();
 			
 			$redirect = add_query_arg('msg', '업데이트 되었습니다.', admin_url('admin.php?page=church-library'));
 			wp_redirect($redirect);
@@ -151,6 +153,7 @@
 			                   ]);
 		}
 	}
+	
 	
 	function str_limit ( $str, $limit ) {
 		$length       = mb_strlen ( $str );

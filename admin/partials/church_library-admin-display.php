@@ -67,7 +67,6 @@
 			}
 		}
 	}
-	
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
@@ -141,6 +140,7 @@
 				<th>분류기호</th>
 				<th>약호</th>
 				<th>ISBN</th>
+				<th>업데이트</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -157,7 +157,20 @@
 											<td>%s</td>
 											<td>%s</td>
 											<td>%s</td>
-										</tr>', $row -> id, $row -> id, admin_url("admin.php?page=church-library-create&action=edit&book_id={$row->id}"), $row -> title, $row -> writer, $row -> count, $row -> publisher, $row -> published_year, $row -> classified_code, $row -> book_code, $row -> isbn );
+											<td>%s</td>
+										</tr>',
+									         $row -> id,
+									         $row -> id,
+									         admin_url ( "admin.php?page=church-library-create&action=edit&book_id={$row->id}" ),
+									         $row -> title,
+									         $row -> writer,
+									         $row -> count,
+									         $row -> publisher,
+									         $row -> published_year,
+									         $row -> classified_code,
+									         $row -> book_code,
+									         $row -> isbn,
+									         $row -> created_at );
 					 }
 				 ?>
 			</tbody>

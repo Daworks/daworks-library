@@ -49,7 +49,7 @@ class Church_library_Activator {
 					  classified_code varchar(255) DEFAULT NULL,
 					  book_code varchar(255) DEFAULT NULL,
 					  isbn varchar(255) DEFAULT NULL,
-					  created_at datetime DEFAULT '0000-00-00 00:00:00' NULL,
+					  created_at datetime DEFAULT '0000-00-00 00:00:00',
             PRIMARY KEY (id)
 					) $charset_collate;";
 			
