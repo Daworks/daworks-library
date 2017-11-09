@@ -6,7 +6,7 @@
 			$('#search #keyword').val('');
 			$('form#search').submit();
 		}
-		$('.pagination').addClass('.pagination-sm');
+		$('.pagination').addClass('pagination-sm');
 	} );
 
 	$( window ).load( function () {
